@@ -16,7 +16,7 @@
 
       h4 {
         text-transform: uppercase;
-        font-weight: 600;
+        font-weight: bold;
         border-left: 5px solid #ff9900;
         padding-left: 10px;
       }
@@ -30,9 +30,12 @@
     .movies-thumbnail {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 30px;
 
       .movie {
         .cover {
+          cursor: pointer;
+
           img {
             border-radius: 5px;
           }
@@ -42,22 +45,10 @@
           width: 180px;
 
           .name {
-            font-weight: 600;
+            font-weight: bold;
             height: 50px;
             margin-top: 5px;
             cursor: pointer;
-          }
-
-          .rating {
-            padding-right: 45px;
-            position: relative;
-
-            .rating-value {
-              position: absolute;
-              top: 10px;
-              right: 0px;
-              font-weight: 600;
-            }
           }
         }
       }
@@ -69,5 +60,46 @@
     min-height: calc(100vh - 80px);
     padding: 20px 40px;
     font-family: "Roboto", sans-serif;
+
+    h4 {
+      text-transform: uppercase;
+      font-weight: bold;
+      border-left: 5px solid #ff9900;
+      padding-left: 10px;
+    }
+
+    .movies {
+      .movie {
+        margin-bottom: 20px;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .name {
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+
+      .view-all {
+        color: #ff9900;
+        text-align: right;
+        margin-top: 30px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.rating {
+  padding-right: 45px;
+  position: relative;
+
+  .rating-value {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    font-weight: bold;
   }
 }

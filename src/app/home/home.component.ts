@@ -8,11 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   trendingMovies: any;
+  theatreMovies: any;
+  popularMovies: any;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.getTrendringMovies();
+    this.getTheatreMovies();
+    this.getPopularMovies();
   }
 
   getTrendringMovies() {
@@ -20,7 +24,22 @@ export class HomeComponent implements OnInit {
       .get('http://localhost:4200/assets/data//trending-movies.json')
       .subscribe((movies) => {
         this.trendingMovies = movies;
-        console.log(this.trendingMovies);
+      });
+  }
+
+  getTheatreMovies() {
+    this.http
+      .get('http://localhost:4200/assets/data//theatre-movies.json')
+      .subscribe((movies) => {
+        this.theatreMovies = movies;
+      });
+  }
+
+  getPopularMovies() {
+    this.http
+      .get('http://localhost:4200/assets/data//popular-movies.json')
+      .subscribe((movies) => {
+        this.popularMovies = movies;
       });
   }
 }
